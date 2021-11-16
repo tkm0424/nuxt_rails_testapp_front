@@ -79,6 +79,8 @@ export default {
     locales: ['ja', 'en'],
     defaultLocale: 'ja',
     // Doc: https://kazupon.github.io/vue-i18n/api/#properties
+    strategy: 'no_prefix',
+    //no_prefix => ルート名に_jaを追加しない
     vueI18n: {
       fallbackLocale: 'ja',
       // silentTranslationWarn: true,
