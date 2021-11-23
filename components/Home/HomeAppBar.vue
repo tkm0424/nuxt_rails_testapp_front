@@ -6,7 +6,6 @@
     :color="toolbarStyle.color"
     :elevation="toolbarStyle.elevation"
   >
-
     <app-logo
       @click.native="$vuetify.goTo('#scroll-top')"
     />
@@ -18,7 +17,7 @@
     <v-spacer />
 
     <v-toolbar-items
-    class="ml-2 hidden-ipad-and-down"
+      class="ml-2 hidden-ipad-and-down"
     >
       <v-btn
         v-for="(menu, i) in menus"
@@ -31,15 +30,15 @@
       </v-btn>
     </v-toolbar-items>
 
-    <app-signup-button />
-    <app-login-button />
+    <before-login-app-bar-signup-button />
+    <before-login-app-bar-login-button />
 
     <v-menu
       bottom
       nudge-left="110"
       nudge-width="100"
     >
-      <template v-slot:activator="{ on }">
+      <template #activator="{ on }">
         <v-app-bar-nav-icon
           class="hidden-ipad-and-up"
           v-on="on"
@@ -65,9 +64,9 @@
 </template>
 
 <script>
-import AppSignupButton from '../App/AppSignupButton.vue'
+import BeforeLoginAppBarSignupButton from '../BeforeLogin/BeforeLoginAppBarSignupButton.vue'
 export default {
-  components: { AppSignupButton },
+  components: { BeforeLoginAppBarSignupButton },
   props: {
     menus: {
       type: Array,

@@ -1,6 +1,6 @@
 <template>
   <div
-  :style="{ marginTop: `${height}px`}"
+    :style="{ marginTop: `${height}px`}"
   >
     <v-footer
       absolute
@@ -13,7 +13,7 @@
         class="py-0"
       >
         <div
-        class="text-center text-body-2"
+          class="text-center text-body-2"
         >
           &copy;{{ copyRightYear }}
           <strong>{{ appName }}</strong>

@@ -21,12 +21,13 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/sass/main.scss' 
+    '~/assets/sass/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    'plugins/axios'
+    'plugins/axios',
+    'plugins/my-inject'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -80,7 +81,7 @@ export default {
     defaultLocale: 'ja',
     // Doc: https://kazupon.github.io/vue-i18n/api/#properties
     strategy: 'no_prefix',
-    //no_prefix => ルート名に_jaを追加しない
+    // no_prefix => ルート名に_jaを追加しない
     vueI18n: {
       fallbackLocale: 'ja',
       // silentTranslationWarn: true,

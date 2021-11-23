@@ -3,36 +3,36 @@
     <template
       #user-form-card-content
     >
-    <v-form
-      ref="form"
-      v-model="isValid"
-    >
-      <user-form-name
-        :name.sync="params.user.name"
-      />
-
-      <user-form-email
-        :email.sync="params.user.email"
-        placeholder
-      />
-
-      <user-form-password
-        :password.sync="params.user.password"
-        set-validation
-      />
-
-      <v-btn
-        :loading="loading"
-        :disabled="!isValid || loading"
-        block
-        color="appblue"
-        class="white--text"
-        @click="signup"
+      <v-form
+        ref="form"
+        v-model="isValid"
       >
-        登録する
-      </v-btn>
-    </v-form>
-    {{params}}
+        <user-form-name
+          :name.sync="params.user.name"
+        />
+
+        <user-form-email
+          :email.sync="params.user.email"
+          placeholder
+        />
+
+        <user-form-password
+          :password.sync="params.user.password"
+          set-validation
+        />
+
+        <v-btn
+          :loading="loading"
+          :disabled="!isValid || loading"
+          block
+          color="appblue"
+          class="white--text"
+          @click="signup"
+        >
+          登録する
+        </v-btn>
+      </v-form>
+      {{ params }}
     </template>
   </user-form-card>
 </template>
