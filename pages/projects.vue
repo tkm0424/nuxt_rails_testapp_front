@@ -22,20 +22,20 @@
               :md="container.md"
             >
               <v-card-title
-              class="white--text"
+                class="white--text"
               >
                 最近のプロジェクト
               </v-card-title>
 
               <v-divider
-              class="mb-4"
-              dark
+                class="mb-4"
+                dark
               />
 
               <v-row
                 align="center"
               >
-              <!-- プロジェクトの追加 -->
+                <!-- プロジェクトの追加 -->
                 <v-col
                   cols="12"
                   :sm="card.sm"
@@ -55,7 +55,7 @@
                         mdi-plus
                       </v-icon>
                       <div
-                      class="caption myblue--text"
+                        class="caption myblue--text"
                       >
                         プロジェクトを追加
                       </div>
@@ -114,7 +114,7 @@
             hide-default-footer
           >
             <template
-            #[`item.name`]="{ item }"
+              #[`item.name`]="{ item }"
             >
               <nuxt-link
                 :to="$my.projectLinkTo(item.id)"
@@ -124,7 +124,7 @@
               </nuxt-link>
             </template>
             <template
-            #[`item.updatedAt`]="{ item }"
+              #[`item.updatedAt`]="{ item }"
             >
               {{ $my.dateFormat(item.updatedAt) }}
             </template>

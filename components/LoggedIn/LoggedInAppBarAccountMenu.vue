@@ -6,7 +6,7 @@
     max-width="200"
   >
     <template
-      v-slot:activator="{ on }"
+      #activator="{ on }"
     >
       <v-btn
         icon
@@ -18,7 +18,7 @@
       </v-btn>
     </template>
     <v-list
-     dense
+      dense
     >
       <v-subheader>
         ログイン中のユーザー
@@ -51,7 +51,7 @@
           :to="{ name: menu.name }"
         >
           <v-list-item-icon
-           class="mr-2"
+            class="mr-2"
           >
             <v-icon
               size="22"
