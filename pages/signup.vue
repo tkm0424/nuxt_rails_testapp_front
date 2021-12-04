@@ -6,6 +6,7 @@
       <v-form
         ref="form"
         v-model="isValid"
+        @submit.prevent="signup"
       >
         <user-form-name
           :name.sync="params.user.name"
@@ -22,12 +23,12 @@
         />
 
         <v-btn
+          type="submit"
           :loading="loading"
           :disabled="!isValid || loading"
           block
           color="appblue"
           class="white--text"
-          @click="signup"
         >
           登録する
         </v-btn>
