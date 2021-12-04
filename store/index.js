@@ -28,7 +28,18 @@ export const state = () => ({
 export const getters = {}
 
 // stateの値を変更する場所
-export const mutations = {}
+export const mutations = {
+  setCurrentProject (state, payload) {
+    state.project.current = payload
+  }
+}
 
 // メソッド(Vueファイルでいうmethods
-export const actions = {}
+export const actions = {
+  getCurrentProject ({ state, commit }, params) {
+    const id = Number(params.id)
+    const currentProject =
+      state.project.list.find(project => project.id === id) || null
+    commit('setCurrentProject', currentProject)
+  }
+}

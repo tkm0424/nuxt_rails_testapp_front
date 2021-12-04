@@ -6,7 +6,9 @@
     :clipped-left="clippedLeft"
     color="white"
   >
-    <slot name="navigation-toggle-button" />
+    <slot
+      name="navigation-toggle-button"
+    />
 
     <nuxt-link
       :to="homePath"
@@ -15,10 +17,18 @@
       <app-logo />
     </nuxt-link>
 
-    <app-title />
+    <app-title
+      :class="{'hidden-mobile-and-down': isNotHomePath }"
+    />
+
+    <!-- page title -->
+    <logged-in-app-bar-breadcrumbs
+      v-if="isNotHomePath"
+    />
 
     <v-spacer />
 
+    <!-- account menu -->
     <logged-in-app-bar-account-menu />
   </v-app-bar>
 </template>
@@ -34,6 +44,11 @@ export default {
   data ({ $store }) {
     return {
       homePath: $store.state.loggedIn.homePath
+    }
+  },
+  computed: {
+    isNotHomePath () {
+      return this.$route.name !== this.homePath.name
     }
   }
 }
