@@ -1,6 +1,7 @@
 export default ({ $axios }) => {
   // リクエストログ
   $axios.onRequest((config) => {
+    config.headers.common['X-Requested-With'] = 'XMLHttprequest'
     console.log(config)
   })
   // レスポンスログ

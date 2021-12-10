@@ -53,7 +53,10 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    // https://axios.nuxtjs.org/options/#credentials
+    credentials: true
+  },
 
   vuetify: {
     // 開発環境でcustomVariablesを有効にするフラグ
