@@ -65,6 +65,13 @@ export default {
     },
     authSuccessful (response) {
       console.log('authSuccessful', response)
+      this.$auth.login(response)
+
+      console.log('token', this.$auth.token)
+      console.log('token', this.$auth.expires)
+      console.log('token', this.$auth.payload)
+      console.log('token', this.$auth.user)
+
       this.$router.push(this.redirectPath)
     },
     authFailure ({ response }) {
