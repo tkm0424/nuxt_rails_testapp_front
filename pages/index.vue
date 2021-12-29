@@ -84,6 +84,7 @@ import HomeContact from '~/components/Home/HomeContact'
 import HomeCompany from '~/components/Home/HomeCompany'
 
 export default {
+  middleware: ['logged-in-redirect'],
   components: {
     HomeAbout,
     HomeProducts,
