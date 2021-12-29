@@ -55,19 +55,16 @@ export default {
     redirectPath () {
       const loggedInHomePath = this.$store.state.loggedIn.homePath
       const beforeLoginHomePath = { name: 'index' }
-      return this.$auth.loggedIn()
-        ? loggedInHomePath : beforeLoginHomePath
+      return this.$auth.loggedIn() ? loggedInHomePath : beforeLoginHomePath
     },
     // axiosエラーの場合はstatusTextを参照する
     responsedMessage () {
-      return (this.error.response && this.error.response.statusText)
-        ? this.error.response.statusText : this.error.message
+      return (this.error.response && this.error.response.statusText) ? this.error.response.statusText : this.error.message
     },
     // i18nに翻訳パスが存在する場合は日本語翻訳メッセージを返す
     errorMessage () {
       const translationPath = `error.${this.responsedMessage}`
-      return this.$te(translationPath)
-        ? this.$t(translationPath) : this.responsedMessage
+      return this.$te(translationPath) ? this.$t(translationPath) : this.responsedMessage
     }
   },
   async created () {
@@ -79,8 +76,7 @@ export default {
   methods: {
     // リダイレクトパスが現在のルートと一致している場合はリロードを行う
     redirect () {
-      this.redirectPath.name === this.$route.name
-        ? this.$router.go() : this.$router.push(this.redirectPath)
+      this.redirectPath.name === this.$route.name ? this.$router.go() : this.$router.push(this.redirectPath)
     }
   }
 }
