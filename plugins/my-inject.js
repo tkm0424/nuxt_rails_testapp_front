@@ -1,6 +1,7 @@
 class MyInject {
   constructor (ctx) {
     this.app = ctx.app
+    this.error = ctx.error
   }
 
   // i18n変換用メソッド
@@ -22,9 +23,16 @@ class MyInject {
   projectLinkTo (id, name = 'project-id-dashboard') {
     return { name, params: { id } }
   }
+
+  // apiエラーハンドラー
+  apiErrorHandler (response) {
+    const statusCode = (response) ? response.status : 500
+    const message = (response) ? response.statusText : 'Network Error'
+    return this.error({ statusCode, message })
+  }
 }
 
 // inject => オリジナルクラスを追加できる(アプリ全体で使うメソッドの管理で使うことが多い)
-export default ({ app }, inject) => {
-  inject('my', new MyInject({ app }))
+export default ({ app, error }, inject) => {
+  inject('my', new MyInject({ app, error }))
 }

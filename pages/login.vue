@@ -26,7 +26,7 @@
           class="px-0"
         >
           <v-btn
-          type="submit"
+            type="submit"
             :disabled="!isValid || loading"
             :loading="loading"
             block
@@ -48,7 +48,7 @@ export default {
     return {
       isValid: false,
       loading: false,
-      params: { auth: { email: 'user0@example.com', password: 'password' } },
+      params: { auth: { email: '', password: '' } },
       redirectPath: $store.state.loggedIn.rememberPath,
       loggedInHomePath: $store.state.loggedIn.homePath
     }
@@ -75,7 +75,8 @@ export default {
         const msg = 'ユーザーが見つかりません'
         return this.$store.dispatch('getToast', { msg })
       }
-      // TODOエラー処理
+      // エラー処理
+      return this.$my.apiErrorHandler(response)
     }
   }
 }

@@ -3,7 +3,7 @@
     <!-- toolbar -->
     <logged-in-app-bar>
       <template
-        v-slot:navigation-toggle-button
+        #navigation-toggle-button
         clipped-left
       >
         <v-app-bar-nav-icon

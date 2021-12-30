@@ -84,7 +84,6 @@ import HomeContact from '~/components/Home/HomeContact'
 import HomeCompany from '~/components/Home/HomeCompany'
 
 export default {
-  middleware: ['logged-in-redirect'],
   components: {
     HomeAbout,
     HomeProducts,
@@ -92,6 +91,7 @@ export default {
     HomeContact,
     HomeCompany
   },
+  middleware: ['logged-in-redirect'],
   data () {
     return {
       imgHeight: 500,
